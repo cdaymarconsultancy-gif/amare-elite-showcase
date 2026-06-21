@@ -3,84 +3,84 @@
    ========================================================================== */
 
 // 1. Configuratie
-const WHATSAPP_NUMBER = "5978888888"; // Vul hier uw Surinaamse telefoonnummer in (zonder + of spaties)
+const WHATSAPP_NUMBER = "5978172661"; // Vul hier uw Surinaamse telefoonnummer in (zonder + of spaties)
 const SLIDE_DURATION = 6500; // Tijd per slide (6.5 seconden)
-const YOUTUBE_VIDEO_ID = "kk4uddaHdDE"; // De Samba muziek video die u wilde!
+const YOUTUBE_VIDEO_ID = "ZAo9VycYH1M"; // De Samba muziek video die u wilde!
 
 // 2. Product Data (Exclusieve Brazil Collectie — allemaal $35 USD)
 const products = [
     {
         id: 1,
-        title: "Amare Rio Classic Tee",
+        title: "Amare Elite Branco",
         type: "pair",
-        frontImage: "images/shirt_1.jpeg",
-        backImage: "images/shirt_5.jpeg",
+        frontImage: "images/shirt_5.jpeg",
+        backImage: "images/shirt_1.jpeg",
         price: "$35 USD",
-        desc: "De ultieme klassieker met het iconische Amare Elite logo op de borst aan de voorkant en het Salvador Tribal patroon op de achterkant. Gemaakt van premium Braziliaans katoen. #streetwear #suriname #exclusief #brazil",
+        desc: "NL: AE-schild & O Redentor watermark (voor), goud 10 & 'Deus • Fé • Brasil' (achter). PT: Escudo AE & O Redentor (frente), 10 dourado & 'Deus • Fé • Brasil' (costas). Limited Edition. Op is op!",
         likes: 1420,
         commentsCount: 34
     },
     {
         id: 2,
-        title: "Amare Copacabana Gold",
+        title: "Amare Cuba La Vida",
         type: "pair",
-        frontImage: "images/shirt_2.jpeg",
-        backImage: "images/shirt_3.jpeg",
+        frontImage: "images/shirt_3.jpeg",
+        backImage: "images/shirt_2.jpeg",
         price: "$35 USD",
-        desc: "Een luxe variant met goudkleurige opdrukken aan de voorkant en het ademende Ipanema Breeze design aan de achterkant. Perfect voor een premium streetwear statement. #copacabana #ipanema #gold #fashion",
+        desc: "NL: 'La Vida es Bella' & klassieke auto (voor), 'Un Buen Tabaco' & Cuba vlag (achter). PT: 'La Vida es Bella' e carro clássico (frente), 'Un Buen Tabaco' e bandeira de Cuba (costas). Limited Edition. Op is op!",
         likes: 954,
         commentsCount: 18
     },
     {
         id: 3,
-        title: "Amare São Paulo Dark Tee",
+        title: "Amare Seleção Neymar",
         type: "pair",
         frontImage: "images/shirt_7.jpeg",
         backImage: "images/shirt_4.jpeg",
         price: "$35 USD",
-        desc: "Minimalistisch São Paulo design aan de voorkant en de urban Brasilia Streetwear grafische print aan de achterkant. Gemaakt van stoer heavyweight katoen. #saopaulo #brasilia #urban #heavyweight",
+        desc: "NL: Neymar Jr. actie print (voor), Neymar Jr 10 & penseelstreken (achter). PT: Neymar Jr. em ação (frente), Neymar Jr 10 e pinceladas (costas). Limited Edition. Op is op!",
         likes: 1672,
         commentsCount: 41
     },
     {
         id: 4,
-        title: "Amare Samba Rhythm",
+        title: "Amare Rio Redentor",
         type: "pair",
-        frontImage: "images/shirt_8.jpeg",
-        backImage: "images/shirt_9.jpeg",
+        frontImage: "images/shirt_9.jpeg",
+        backImage: "images/shirt_8.jpeg",
         price: "$35 USD",
-        desc: "Sportieve look aan de voorkant met Samba Rhythm contrasterende panelen en de verfijnde Carnival Special Edition print aan de achterkant. Limited edition. #samba #carnival #limited",
+        desc: "NL: O Redentor bij zonsopgang (voor), goud 10 & Corcovado berg (achter). PT: O Redentor ao amanhecer (frente), 10 dourado e morro do Corcovado (costas). Limited Edition. Op is op!",
         likes: 1034,
         commentsCount: 19
     },
     {
         id: 5,
-        title: "Amare Bossa Nova Smooth",
+        title: "Amare Neymar Maracanã",
         type: "pair",
         frontImage: "images/shirt_11.jpeg",
         backImage: "images/shirt_12.jpeg",
         price: "$35 USD",
-        desc: "Uiterst elegant model met een zachte v-hals aan de voorkant en het exclusieve handgemaakte gouden Elite Signature stiksel op de achterkant. Ons paradepaardje. #signature #gold #bossanova",
+        desc: "NL: Neymar careta (voor), Neymar Jr 10 & Maracanã (achter). PT: Careta do Neymar (frente), Neymar Jr 10 & estádio do Maracanã (costas). Limited Edition. Op is op!",
         likes: 2450,
         commentsCount: 92
     },
     {
         id: 6,
-        title: "Amare Amazonia Organic",
+        title: "Amare Brasil-Suriname Flat",
         type: "single",
         frontImage: "images/shirt_6.jpeg",
         price: "$35 USD",
-        desc: "Geproduceerd met milieuvriendelijk biologisch katoen. Diepe aardetinten met een minimalistisch en elegant Amare-logo. #organic #amazon #green",
+        desc: "NL: Split-ontwerp met vlaggen van Brazilië en Suriname. PT: Design com bandeiras do Brasil e do Suriname. Limited Edition. Op is op!",
         likes: 1250,
         commentsCount: 29
     },
     {
         id: 7,
-        title: "Amare Favela Chic",
+        title: "Amare Brasil-Suriname V-Neck",
         type: "single",
         frontImage: "images/shirt_10.jpeg",
         price: "$35 USD",
-        desc: "Geïnspireerd op de levendige en creatieve straatkunst van Rio. Een kleurrijke touch op een donkere basis. #favela #chic #art",
+        desc: "NL: Luxe V-hals split-ontwerp met vlaggen van Brazilië en Suriname. PT: Gola V com bandeiras do Brasil e do Suriname. Limited Edition. Op is op!",
         likes: 1140,
         commentsCount: 25
     }
