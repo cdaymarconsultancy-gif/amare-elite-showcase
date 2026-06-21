@@ -131,9 +131,7 @@ let touchEndY = 0;
 const userLikedMap = {}; // houdt bij welke shirts de gebruiker geliked heeft
 const commentsDataMap = {}; // houdt de dynamische comments per product bij
 
-// Audio / YouTube Player Staat
-let ytPlayer = null;
-let ytReady = false;
+// Audio Staat
 let audioPlaying = false;
 
 // DOM Elementen
@@ -175,52 +173,8 @@ const catalogModal = document.getElementById('catalog-modal');
 const closeCatalogBtn = document.getElementById('close-catalog');
 const catalogGrid = document.getElementById('catalog-grid');
 
-// YouTube IFrame API Loader
-function loadYouTubeAPI() {
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-}
-
-// YouTube Player Initialisatie
-window.onYouTubeIframeAPIReady = function() {
-    ytPlayer = new YT.Player('yt-player-container', {
-        height: '1',
-        width: '1',
-        videoId: YOUTUBE_VIDEO_ID,
-        playerVars: {
-            'autoplay': 0,
-            'controls': 0,
-            'disablekb': 1,
-            'fs': 0,
-            'loop': 1,
-            'playlist': YOUTUBE_VIDEO_ID, // playlist is vereist voor loopen
-            'modestbranding': 1,
-            'rel': 0,
-            'showinfo': 0
-        },
-        events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
-};
-
-function onPlayerReady(event) {
-    ytReady = true;
-    console.log("YouTube Player Samba Live is geladen.");
-}
-
-function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.ENDED) {
-        ytPlayer.playVideo();
-    }
-}
-
 // 4. Initialisatie
 function init() {
-    loadYouTubeAPI();
     initializeDataMaps();
     buildSlideshow();
     buildCatalog();
@@ -727,17 +681,14 @@ function submitComment() {
     updateInteractionCounters(currentProduct.id);
 }
 
-// 8. Audio Regeling (YouTube & Mute)
+// 8. Audio Regeling (Lokaal Audiobestand & Mute)
 function startPlayback() {
     audioPlaying = true;
     musicDisc.classList.add('playing');
 
-    if (ytReady && ytPlayer) {
-        ytPlayer.setVolume(55);
-        ytPlayer.playVideo();
-    } else if (bgMusic) {
-        // Offline fallback — alleen als element bestaat
-        bgMusic.play().catch(e => console.log('Audio fallback:', e));
+    if (bgMusic) {
+        bgMusic.volume = 0.55;
+        bgMusic.play().catch(e => console.log('Audio playback failed:', e));
     }
 }
 
@@ -745,9 +696,6 @@ function pausePlayback() {
     audioPlaying = false;
     musicDisc.classList.remove('playing');
 
-    if (ytReady && ytPlayer) {
-        ytPlayer.pauseVideo();
-    }
     if (bgMusic) bgMusic.pause();
 }
 
