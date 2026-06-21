@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amare Elite — TikTok Lookbook Suriname</title>
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dynamic Blurred Ambient Background (Spotify/TikTok Ambient Blur) -->
+    <div class="dynamic-bg-container">
+        <div id="bg-fade-1" class="dynamic-bg-layer active"></div>
+        <div id="bg-fade-2" class="dynamic-bg-layer"></div>
+        <div class="dynamic-bg-overlay"></div>
+    </div>
+
+    <!-- Hidden YouTube Player for Samba Live (kk4uddaHdDE) -->
+    <div id="yt-player-container"></div>
+
+    <!-- Splash Screen (Start Presentation & Play Music) -->
+    <div id="splash-screen" class="splash-container">
+        <div class="splash-content">
+            <h2 class="splash-subtitle">🇧🇷 EXCLUSIEVE BRAZIL COLLECTIE</h2>
+            <h1 class="splash-title">AMARE ELITE</h1>
+            <p class="splash-tagline">
+                Nergens anders te verkrijgen in Suriname! <br>
+                <strong>Prijs: $35 USD</strong> — OP IS OP!
+            </p>
+            <button id="start-btn" class="btn-primary gold-glow">
+                <span>ONTDEK COLLECTIE</span>
+                <i class="fa-solid fa-play"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main TikTok Viewport Container -->
+    <div id="app-container" class="app-wrapper hidden">
+        
+        <!-- Top Navigation (TikTok style) -->
+        <header class="tiktok-header">
+            <span class="header-tab">Volgend</span>
+            <span class="header-tab active">Voor jou</span>
+            <i class="fa-solid fa-search search-icon"></i>
+        </header>
+
+        <!-- Main Slide Area -->
+        <main class="tiktok-feed">
+            <div id="slides-container" class="slides-container">
+                <!-- Dynamic Slides will be injected here by app.js -->
+            </div>
+
+            <!-- Heart Float Overlay (Container for double-click heart animations) -->
+            <div id="heart-float-overlay" class="heart-float-overlay"></div>
+
+            <!-- Right Interaction Sidebar (TikTok Overlays) -->
+            <aside class="tiktok-sidebar">
+                <!-- Profile Avatar -->
+                <div class="sidebar-item profile">
+                    <div class="avatar-ring">
+                        <div class="avatar-placeholder">AE</div>
+                    </div>
+                    <button id="follow-btn" class="follow-badge"><i class="fa-solid fa-plus"></i></button>
+                </div>
+
+                <!-- Like (Heart) Button -->
+                <div class="sidebar-item">
+                    <button id="like-btn" class="action-btn" title="Vind ik leuk">
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <span id="like-count" class="action-count">1.4K</span>
+                </div>
+
+                <!-- Comment Button -->
+                <div class="sidebar-item">
+                    <button id="comment-toggle" class="action-btn" title="Reacties">
+                        <i class="fa-solid fa-comment-dots"></i>
+                    </button>
+                    <span id="comment-count" class="action-count">34</span>
+                </div>
+
+                <!-- Share Button -->
+                <div class="sidebar-item">
+                    <button id="share-btn" class="action-btn" title="Delen">
+                        <i class="fa-solid fa-share"></i>
+                    </button>
+                    <span class="action-count">Deel</span>
+                </div>
+
+                <!-- Rotating Vinyl Record / Audio disc -->
+                <div class="sidebar-item music-disc-container">
+                    <div id="music-disc" class="music-disc">
+                        <div class="disc-center"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Bottom Information Panel (Description, Price, Tags) -->
+            <div class="tiktok-bottom-panel">
+                <div class="user-info">
+                    <span class="user-handle">@amare_elite</span>
+                    <span class="verified-badge"><i class="fa-solid fa-circle-check"></i></span>
+                </div>
+                
+                <!-- Exclusive Offer Tags -->
+                <div class="promo-tags">
+                    <span class="badge badge-gold">🔥 EXCLUSIEF IN SURINAME</span>
+                    <span class="badge badge-red">🚨 OP IS OP!</span>
+                </div>
+
+                <!-- Title & Description -->
+                <h3 id="product-title" class="product-title-text">Rio Classic Tee</h3>
+                <p id="product-desc" class="product-description-text">
+                    Luxe T-shirt geïmporteerd uit Brazilië. Gemaakt van premium zacht katoen.
+                </p>
+
+                <!-- Sizing / Stock Info -->
+                <div class="stock-info">
+                    <span class="size-label"><i class="fa-solid fa-expand"></i> Maten: S t/m XXL</span>
+                </div>
+
+                <!-- Audio Track Title Scrolling Bar -->
+                <div class="music-scroller">
+                    <i class="fa-solid fa-music"></i>
+                    <div class="scroller-window">
+                        <span class="scroller-text">Origineel geluid - Amare Elite Samba Mix (Live YT) - </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Sponsored Action Banner (Shop Now / Buy Now Bar) -->
+            <div class="sponsored-banner">
+                <a id="whatsapp-order-btn" href="#" target="_blank" class="banner-link">
+                    <div class="banner-content">
+                        <span class="banner-tag">SPONSORED</span>
+                        <span class="banner-title">👉 KOOP NU / BESTEL NU VIA WHATSAPP</span>
+                    </div>
+                    <div class="banner-price">
+                        <span class="price-value">$35 USD</span>
+                        <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+                    </div>
+                </a>
+            </div>
+
+        </main>
+        
+        <!-- Bottom Tab bar (TikTok look) -->
+        <footer class="tiktok-navbar">
+            <div class="nav-tab active"><i class="fa-solid fa-house"></i><span>Home</span></div>
+            <div class="nav-tab"><i class="fa-solid fa-compass"></i><span>Ontdek</span></div>
+            <div class="nav-plus-btn"><div class="plus-icon"></div></div>
+            <div class="nav-tab"><i class="fa-solid fa-message"></i><span>Inbox</span></div>
+            <div class="nav-tab" id="nav-catalog-btn"><i class="fa-solid fa-grip"></i><span>Catalogus</span></div>
+        </footer>
+    </div>
+
+    <!-- TikTok Comment Drawer (Bottom Sheet) -->
+    <div id="comment-drawer" class="comment-drawer hidden">
+        <div class="drawer-header">
+            <span class="drawer-title">Reacties (<span id="drawer-comment-count">34</span>)</span>
+            <button id="close-comments" class="btn-close-comments">&times;</button>
+        </div>
+        <div class="drawer-body" id="drawer-comments-list">
+            <!-- Comments will be injected here by app.js -->
+        </div>
+        <div class="drawer-footer">
+            <input type="text" id="new-comment-input" placeholder="Voeg een reactie toe..." autocomplete="off">
+            <button id="submit-comment-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Grid Catalog Modal -->
+    <div id="catalog-modal" class="modal-container hidden">
+        <div class="modal-header">
+            <h2>AMARE ELITE CATALOGUS</h2>
+            <button id="close-catalog" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div id="catalog-grid" class="catalog-grid">
+                <!-- Dynamic cards will be injected here by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
